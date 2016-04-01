@@ -12,7 +12,9 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+	<link href="css/main.css" rel="stylesheet">
+	
+	
   </head>
   <body>
 	<div class="container-fluid">
@@ -27,22 +29,22 @@
 							 
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button> <a class="navbar-brand active" href="#">J.W.C</a>
+							</button> <a class="navbar-brand" href="#">J.W.C</a>
 						</div>
 						
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li class="">
-									<a href="details.html">fruit</a>
+								<li class="active">
+									<a href="#">fruit</a>
 								</li>
 								<li>
-									<a href="details.html">pillow</a>
+									<a href="#">pillow</a>
 								</li>
 								<li class="dropdown">
 									 <a href="#" class="dropdown-toggle" data-toggle="dropdown">nuts<strong class="caret"></strong></a>
 									<ul class="dropdown-menu">
 										<li>
-											<a href="details.html">nuts</a>
+											<a href="#">Action</a>
 										</li>
 										<li>
 											<a href="#">Another action</a>
@@ -82,8 +84,55 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
-			<div class="carousel slide" id="carousel-604754">
+		<div class="col-md-2" >
+		<!-- 左边空白 -->
+		</div>
+		<div class="col-md-2" >
+		<!-- 图标 -->
+			<img src="images/apple-watch.png"></img>
+		</div>
+		<div class="col-md-4" >
+		<!-- 空白 -->
+		</div>
+		<div class="col-md-2" >
+			<!-- 关键词 -->
+			<ul class="list-inline">
+				<li>
+					通知
+				</li>
+				<li>
+					健身
+				</li>
+				<li>
+					健康
+				</li>
+				<li>
+					个性化设计
+				</li>
+				<li>
+					更多乐趣
+				</li>
+				
+			</ul>
+			
+				
+			
+		</div>
+		<div class="col-md-2" >
+		<!-- 右边空白 -->
+		</div>
+		
+		
+	</div>
+	<div class="row">
+		<div class="col-md-2" >
+		
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<div class="carousel slide" id="carousel-604754">
 				<ol class="carousel-indicators">
 					<li class="active" data-slide-to="0" data-target="#carousel-604754">
 					</li>
@@ -94,7 +143,7 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="item active" style="background-size:cover;">
-						<a href="details.html"><img alt="Carousel Bootstrap First" src="images/lunbo1.jpg"  style="width:100%;" />
+						<img alt="Carousel Bootstrap First" src="images/watch1.jpg"  style="width:100%;" />
 						<div class="carousel-caption">
 							<h4>
 								
@@ -105,7 +154,7 @@
 						</div>
 					</div>
 					<div class="item" style="background-size:cover;">
-						<a href="details.html"><img alt="Carousel Bootstrap Second" src="images/lunbo2.jpg"  style="width:100%;"/>
+						<img alt="Carousel Bootstrap Second" src="images/watch2.jpg"  style="width:100%;"/>
 						<div class="carousel-caption">
 							<h4>
 								
@@ -116,7 +165,7 @@
 						</div>
 					</div>
 					<div class="item" style="background-size:cover;">
-						<a href="details.html"><img alt="Carousel Bootstrap Third" src="images/lunbo3.jpg"  style="width:100%;"/>
+						<img alt="Carousel Bootstrap Third" src="images/watch3.jpg"  style="width:100%;"/>
 						<div class="carousel-caption">
 							<h4>
 								
@@ -129,39 +178,55 @@
 					
 				</div> <a class="left carousel-control" href="#carousel-604754" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-604754" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3">
-			<a href="details.html"><img href="" alt="Bootstrap Image Preview" src="images/1.jpg"  style="width:100%;"/>
-		</div>
-		<div class="col-md-3">
-			<a href="details.html"><img alt="Bootstrap Image Preview" src="images/2.jpg"  style="width:100%;"/>
-		</div>
-		<div class="col-md-3">
-			<a href="details.html"><img alt="Bootstrap Image Preview" src="images/3.jpg"  style="width:100%;"/>
-		</div>
-		<div class="col-md-3">
-			<a href="details.html"><img alt="Bootstrap Image Preview" src="images/4.jpg"  style="width:100%;"/>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
 		</div>
 		<div class="col-md-4">
-			<!-- 一些导航链接 -->
+			<!-- 购买选项 -->
 			
+			<div class="gs grid-1of2 inline as-product-selection-area clearfix" id="single-product-selection-area">
+          <div class="part-selection-buttons">
+            <div class="product-selection-header">
+              <h1 class="fwl">
+              <h1 class="as-productdecision-feature">Apple Watch Sport</h1>
+			  
+              <span itemprop="name">38 毫米深空灰色铝金属表壳搭配黑色运动型表带</span></h1>
+            </div>
+            <div class="">
+              <legend class="length-selection-title">表带尺寸
+			  
+			  </legend>
+              
+			  
+			  
+            </div>
+			<div class="buy">
+				<h1>RMB 5,228</h1>
+				<h4 style="color:grey">含增值税:约RMB769</h4>
+				
+				<button class="btn btn-small btn-info btn-block" type="button">购买</button>
+			  </div>
+          </div>
+         
+         
+          </div>
+         
+         
+        </div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-2" >
+		
 		</div>
+		
 	</div>
 	<div class="row foot">
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4" >
 			 
-			<div class="" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
-		<div class=""> <a class="" href="">隐私政策</a> <a class="" href="">使用条款</a> <a class="" href="">销售政策</a> <a class="" href="">法律信息</a> <a class="" href="">网站地图</a> </div>
+		<div class="copyRight" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
+		<div class="info"> <a class="" href="">隐私政策</a> <a class="" href="">使用条款</a> <a class="" href="">销售政策</a> <a class="" href="">法律信息</a> <a class="" href="">网站地图</a> </div>
 		</div>
 		<div class="col-md-4">
 		</div>

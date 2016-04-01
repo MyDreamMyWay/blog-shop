@@ -12,24 +12,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<style>
-	.description{
-	position:absolute;top:20%;left:10%;
-	
-	
-	
-	
-	
-	}
-	
-	
-	
-	.detail img{
-	width:100%;
-	position:relative;
-	
-	}
-	</style>
+
   </head>
   <body>
 	<div class="container-fluid">
@@ -99,46 +82,73 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-2" >
+		<div class="col-md-2">
 		</div>
-		<div class="col-md-8 detail" >
-			
-				
-			
-				<img src="images/detail4.jpg"></img>
-				
-				<div class="description">
-				<h1>iMac</h1>
-				<p class="">Retina 的大作</p>
-					<span class="">
-						<a class="" href="">进一步了解</a>
-						<a class="" href="">购买</a>
-					</span>
-			
-			
+		<div class="col-md-8">
+			<div class="buyInfo">
+				<div class="title">
+					<h3>购物袋内的产品</h3>
 				</div>
-			
+				<hr></hr>
+				<div class="buyDetail">
+					<div class="row" >
+						<div class="col-sm-4" style="text-align:center">
+							<img src="images/iphone6s.jpg" ></img>
+						</div>
+						<div class="col-sm-8">
+							<div class="" style="float:left">
+							<span>iPhone 6s 16GB 银色</span>
+							</div>
+							
+								<div class="" style="text-align:right">
+									<span >RMB 5,288</span>
+									<input class="input-mini" type="text" value="1">
+									<span>RMB 5,288</span>
+								</div>
+							
+							<hr></hr>
+							<div class="" style="text-align:right">
+								<a href="#">显示礼品选项</a>
+								<a href="">删除</a>
+							</div>
+							
+							<hr></hr>
+							<div class=""style="text-align:right">
+							<span>免费送货</span>
+							</div>
+							
+							<hr></hr>
+							<div style="float:left">
+								<a href="">保存购物袋</a>|<a href="">查看以保存的购物袋</a>|<a href="">联系</a>
+							</div>
+								<div style="text-align:right">
+								<button class="btn btn-info">继续购物</button>
+								<button class="btn btn-success">结账</button>
+							</div>
+							
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-2" >
+		<div class="col-md-2">
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12 detail">
-			<img src="images/detail1.jpg"></img>
-		</div>
-		<div class="col-md-12 detail">
-			<img src="images/detail2.jpg"></img>
-		</div>
-		<div class="col-md-12 detail">
-			<img src="images/detail3.jpg"></img>
-		</div>
+		
 	</div>
-	<div class="row foot">
+	<div class="row">
+		
+		
+	</div>
+	<div class="row">
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4" >
 			 
-		<div class="copyRight" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
+			<div class="" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
 		<div class=""> <a class="" href="">隐私政策</a> <a class="" href="">使用条款</a> <a class="" href="">销售政策</a> <a class="" href="">法律信息</a> <a class="" href="">网站地图</a> </div>
 		</div>
 		<div class="col-md-4">

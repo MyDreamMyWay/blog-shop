@@ -12,9 +12,24 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<style>
+	.description{
+	position:absolute;top:20%;left:10%;
 	
 	
+	
+	
+	
+	}
+	
+	
+	
+	.detail img{
+	width:100%;
+	position:relative;
+	
+	}
+	</style>
   </head>
   <body>
 	<div class="container-fluid">
@@ -184,49 +199,19 @@
 		</div>
 		<div class="col-md-4">
 			<!-- 购买选项 -->
-			
-			<div class="gs grid-1of2 inline as-product-selection-area clearfix" id="single-product-selection-area">
-          <div class="part-selection-buttons">
-            <div class="product-selection-header">
-              <h1 class="fwl">
-              <h1 class="as-productdecision-feature">Apple Watch Sport</h1>
-			  
-              <span itemprop="name">38 毫米深空灰色铝金属表壳搭配黑色运动型表带</span></h1>
-            </div>
-            <div class="">
-              <legend class="length-selection-title">表带尺寸
-			  
-			  </legend>
-              
-			  
-			  
-            </div>
-			<div class="buy">
-				<h1>RMB 5,228</h1>
-				<h4 style="color:grey">含增值税:约RMB769</h4>
-				
-				<button class="btn btn-small btn-info btn-block" type="button">购买</button>
-			  </div>
-          </div>
-         
-         
-          </div>
-         
-         
-        </div>
 		</div>
 		<div class="col-md-2" >
 		
 		</div>
 		
 	</div>
-	<div class="row foot">
+	<div class="row">
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4" >
 			 
-		<div class="copyRight" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
-		<div class="info"> <a class="" href="">隐私政策</a> <a class="" href="">使用条款</a> <a class="" href="">销售政策</a> <a class="" href="">法律信息</a> <a class="" href="">网站地图</a> </div>
+			<div class="" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
+		<div class=""> <a class="" href="">隐私政策</a> <a class="" href="">使用条款</a> <a class="" href="">销售政策</a> <a class="" href="">法律信息</a> <a class="" href="">网站地图</a> </div>
 		</div>
 		<div class="col-md-4">
 		</div>

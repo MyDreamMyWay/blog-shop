@@ -20,6 +20,3 @@
 	.foot{
 	text-align:center;
 	}
-	.copyRight{
-		color:grey
-	}

@@ -12,9 +12,28 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<style>
+	.description{
+	position:absolute;top:20%;left:10%;
 	
 	
+	
+	
+	
+	}
+	
+	
+	
+	.detail img{
+	width:100%;
+	position:relative;
+	
+	}
+	
+	.foot{
+	margin:0,auto
+	}
+	</style>
   </head>
   <body>
 	<div class="container-fluid">

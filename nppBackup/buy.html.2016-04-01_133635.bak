@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JWC</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<style>
+	.description{
+	position:absolute;top:20%;left:10%;
+	
+	
+	
+	
+	
+	}
+	
+	
+	
+	.detail img{
+	width:100%;
+	position:relative;
+	
+	}
+	</style>
+  </head>
+  <body>
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							 
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+							</button> <a class="navbar-brand" href="#">J.W.C</a>
+						</div>
+						
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="#">fruit</a>
+								</li>
+								<li>
+									<a href="#">pillow</a>
+								</li>
+								<li class="dropdown">
+									 <a href="#" class="dropdown-toggle" data-toggle="dropdown">nuts<strong class="caret"></strong></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">Action</a>
+										</li>
+										<li>
+											<a href="#">Another action</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">One more separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" />
+								</div> 
+								<button type="submit" class="btn btn-default">
+									search
+								</button>
+							</form>
+							
+						</div>
+						
+					</nav>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2" >
+		<!-- 左边空白 -->
+		</div>
+		<div class="col-md-2" >
+		<!-- 图标 -->
+			<img src="images/apple-watch.png"></img>
+		</div>
+		<div class="col-md-4" >
+		<!-- 空白 -->
+		</div>
+		<div class="col-md-2" >
+			<!-- 关键词 -->
+			<ul class="list-inline">
+				<li>
+					通知
+				</li>
+				<li>
+					健身
+				</li>
+				<li>
+					健康
+				</li>
+				<li>
+					个性化设计
+				</li>
+				<li>
+					更多乐趣
+				</li>
+				
+			</ul>
+			
+				
+			
+		</div>
+		<div class="col-md-2" >
+		<!-- 右边空白 -->
+		</div>
+		
+		
+	</div>
+	<div class="row">
+		<div class="col-md-2" >
+		
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<div class="carousel slide" id="carousel-604754">
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-604754">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-604754">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-604754">
+					</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active" style="background-size:cover;">
+						<img alt="Carousel Bootstrap First" src="images/watch1.jpg"  style="width:100%;" />
+						<div class="carousel-caption">
+							<h4>
+								
+							</h4>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+					<div class="item" style="background-size:cover;">
+						<img alt="Carousel Bootstrap Second" src="images/watch2.jpg"  style="width:100%;"/>
+						<div class="carousel-caption">
+							<h4>
+								
+							</h4>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+					<div class="item" style="background-size:cover;">
+						<img alt="Carousel Bootstrap Third" src="images/watch3.jpg"  style="width:100%;"/>
+						<div class="carousel-caption">
+							<h4>
+								
+							</h4>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+					
+				</div> <a class="left carousel-control" href="#carousel-604754" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-604754" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- 购买选项 -->
+			
+			<div class="gs grid-1of2 inline as-product-selection-area clearfix" id="single-product-selection-area">
+          <div class="part-selection-buttons">
+            <div class="product-selection-header">
+              <h1 class="fwl">
+              <span class="as-productdecision-feature">Apple Watch Sport</span> 
+              <span itemprop="name">38 毫米深空灰色铝金属表壳搭配黑色运动型表带</span></h1>
+            </div>
+            <div class="length-buttons selection enabled as-single-band">
+              <legend class="length-selection-title">表带尺寸</legend>
+              <div class="selection-buttons fwr">
+                <div class="item">
+                  <input type="radio" value="MJ2X2CH/A" id="dimensionLength_MJ2X2CH/A" name="dimensionLength" class="a11y" />
+                  <div class="details single-band">
+                    <div class="as-content">
+                      <label for="dimensionLength_MJ2X2CH/A">适合 130-200 毫米腕围</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="ireserve" class="ireserve">
+            <img src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/i/re/ireserve/icon/ireserve-icon-retina?wid=33&amp;hei=37&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453469453683"
+            alt="" width="33" height="37" data-scale-params-2="wid=66&amp;hei=74&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453469453683"
+            class="ir" />
+            <div class="ireserve-info">
+              <div>对店内购买感兴趣？</div>
+              <div class="ireserve-link">
+                <a href="" class="icon-more"></a>
+              </div>
+            </div>
+          </div>
+          <div class="as-purchaseinfo">
+            <div class="as-purchaseinfo-details as-purchaseinfo-background">
+              <div class="summary-info">
+                <div class="as-price as-purchaseinfo-price">
+                  <meta itemprop="sku" content="MJ2X2CH/A" />
+                  <meta itemprop="priceCurrency" content="CNY" />
+                  <span class="as-price-currentprice">
+                    <span itemprop="price">RMB 2,288</span>
+                  </span>
+                </div>
+                <div class="as-watch-accessory as-bfaccessory-container visuallyhidden">
+                  <script type="application/json" data-render="">
+            {
+                &quot;isShowAccessory&quot;: true,
+                &quot;noSelection&quot;: true,
+                &quot;hasSelection&quot;: false
+            }
+        
+</script>
+                  <div data-render="materializer" data-shown="isShowAccessory" class="as-accessory-cover">
+                    <div data-render="materializer" data-shown="noSelection" class="row">
+                      <div class="column large-12 small-12">
+                        <button id="applecare_open" type="button" class="as-buttonlink as-bfaccessory-title"
+                        data-ase-overlay="applecare_overlay" data-ase-click="show">
+                          <span id="applecare_overlay-labelledby">添加 AppleCare+ 全方位服务计划</span>
+                        </button>
+                        <div class="as-bfaccessory-price">RMB 488</div>
+                      </div>
+                    </div>
+                    <div data-render="materializer" data-shown="hasSelection" data-hide-focus="#applecare_open" class="row">
+                      <div class="column large-9 small-6">
+                        <div class="as-bfaccessory-title">适用于 Apple Watch Sport 的 AppleCare+ 全方位服务计划</div>
+                        <div>
+                          <button class="as-buttonlink" id="applecare_remove" data-accessory-click="remove"
+                          data-accessory-partnumber="none">移除 
+                          <span class="visuallyhidden">适用于 Apple Watch Sport 的 AppleCare+
+                          全方位服务计划</span></button>
+                        </div>
+                      </div>
+                      <div class="as-bfaccessory-priceright column large-3 small-6">RMB 488</div>
+                    </div>
+                  </div>
+                  <div class="as-bfaccessory-overlay-ishidden">
+                    <div data-render="overlay" data-uid="applecare_overlay"
+                    class="as-overlay as-overlay-popup as-overlay-info as-bfaccessory-overlay applecare_overlay"
+                    data-aria-labelledby="applecare_overlay-labelledby">
+                      <div class="as-overlay-content">
+                        <div class="as-singlepartdescription">
+                          <div class="as-l-container">
+                            <div class="row as-singlepartdescription-details-container">
+                              <div class="column large-3 small-12 as-singlepartdescription-image">
+                                <img src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/A/PP/APPLECARE/plus/APPLECARE-plus-201508?wid=163&amp;hei=166&amp;align=0,-1&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453538141501"
+                                class="ir feature-img" alt="" width="163" height="166"
+                                data-scale-params-2="wid=326&amp;hei=332&amp;align=0,-1&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453538141501" />
+                              </div>
+                              <div class="column large-9 small-12 as-singlepartdescription-details">
+                                <div class="as-singlepartdescription-headline">
+                                  <h2 class="">适用于 Apple Watch Sport 的 AppleCare+ 全方位服务计划</h2>
+                                  <span class="as-singlepartdescription-pricestring">RMB 488</span>
+                                </div>
+                                <div class="as-singlepartdescription-add">
+                                  <button class="button" id="applecare_add" data-accessory-overlay="applecare_overlay"
+                                  data-accessory-click="add" data-ase-overlay="applecare_overlay" data-ase-click="hide"
+                                  data-accessory-focus="#applecare_remove" value="applecare"
+                                  data-accessory-partnumber="S5372CH/A">添加 
+                                  <span class="visuallyhidden">适用于 Apple Watch Sport 的 AppleCare+
+                                  全方位服务计划</span></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row as-singlepartdescription-description">
+                              <div class="column large-12 small-12">
+                                <div class="pd-overlay-201603-applecare">
+                                  <p class="pd-overlay-subcopy">每只 Apple Watch Sport 均可在
+                                  <a href="http://www.apple.com/cn/legal/warranty" data-slot-name="detail6"
+                                  data-feature-name="Astro Link" data-display-name="AOS: legal/warranty"
+                                  target="_blank">有限保修期</a>内享有 1 年的硬件保修服务和长达 
+                                  <a href="http://www.apple.com/cn/support/complimentary" data-slot-name="detail6"
+                                  data-feature-name="Astro Link" data-display-name="AOS: support/complimentary" target="_blank">90
+                                  天的免费电话技术支持</a>。适用于 Apple Watch Sport 的 AppleCare+
+                                  全方位服务计划可提供自购买 Apple Watch Sport
+                                  <sup>1</sup> 之日起为期 2 年的维修服务，还可获得多达 2
+                                  次意外损坏保修服务，每次收取 RMB 528 的服务费
+                                  <sup>2</sup>。</p>
+                                  <p class="pd-overlay-subcopy-2">中国的消费者权益保护法包括 “三包”
+                                  规定，赋予了消费者自购买之日起 1
+                                  年的产品质量问题保修服务。欲知详情，请点击
+                                  <a href="http://www.apple.com/cn/legal/statutory-warranty" data-slot-name="detail6"
+                                  data-feature-name="Astro Link" data-display-name="AOS: legal/statutory-warranty"
+                                  target="_blank">这里</a>。</p>
+                                  <p class="pd-overlay-subcopy-2">
+                                  将你的保修范围延长至两年的维修服务和专家电话技术支持。</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row as-singlepartdescription-infographic">
+                              <div class="column large-12 small-12">
+                                <div class="row as-singlepartdescription-infographic">
+                                  <div class="column large-12 small-12">
+                                    <div class="pd-overlay-201603-applecare">
+                                      <div class="pd-overlay-applecare-table pd-font-12-400">
+                                        <table class="pd-overlay-table">
+                                          <caption class="a11y">AppleCare+ 全方位服务计划保修范围</caption>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row" colspan="2" class="pd-overlay-table-subheader">
+                                                <img src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/a/pp/applecare/201508/applecare-201508-repair-icon?wid=17&amp;hei=17&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453466142763"
+                                                alt="" width="17" height="17"
+                                                data-scale-params-2="wid=34&amp;hei=34&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453466142763"
+                                                class="ir" />
+                                                <span class="a11y">保修</span>
+                                                <h3 class="pd-overlay-subheader pd-font-16-400">维修或更换</h3>
+                                              </th>
+                                            </tr>
+                                            <tr>
+                                              <td>
+                                                <div class="pd-overlay-year1"></div>
+                                                <p class="pd-overlay-description">第 1 年 
+                                                <span class="a11y">免费维修支持</span></p>
+                                              </td>
+                                              <td>
+                                                <div class="pd-overlay-year2"></div>
+                                                <p class="pd-overlay-description">第 2 年 
+                                                <span class="a11y">AppleCare+ 全方位服务计划增加的范围</span></p>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row" colspan="2"
+                                              class="pd-overlay-table-subheader pd-overlay-table-subheader-support">
+                                                <img src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/a/pp/applecare/201508/applecare-201508-support-icon?wid=15&amp;hei=16&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453466144504"
+                                                alt="" width="15" height="16"
+                                                data-scale-params-2="wid=30&amp;hei=32&amp;fmt=png-alpha&amp;qlt=95&amp;.v=1453466144504"
+                                                class="ir" />
+                                                <span class="a11y">电话技术支持</span>
+                                                <h3 class="pd-overlay-subheader pd-font-16-400">技术支持电话</h3>
+                                              </th>
+                                            </tr>
+                                            <tr>
+                                              <td>
+                                                <div class="pd-overlay-days90"></div>
+                                                <div class="pd-overlay-additional-coverage"></div>
+                                                <p class="pd-overlay-description">90 天 
+                                                <span class="a11y">免费电话技术支持</span></p>
+                                              </td>
+                                              <td>
+                                                <div class="pd-overlay-year2"></div>
+                                                <p class="pd-overlay-description">第 2 年 
+                                                <span class="a11y">AppleCare+ 全方位服务计划增加的范围</span></p>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                        <div class="pd-overlay-support">
+                                          <div class="pd-overlay-dot"></div>
+                                          <p class="pd-overlay-label">免费支持</p>
+                                        </div>
+                                        <div class="pd-overlay-coverage">
+                                          <div class="pd-overlay-dot"></div>
+                                          <p class="pd-overlay-label">AppleCare+ 全方位服务计划增加的范围</p>
+                                        </div>
+                                      </div>
+                                      <p class="pd-overlay-link">
+                                        <a href="http://www.apple.com/cn/support/products/watch.html" data-slot-name="detail6"
+                                        data-feature-name="Astro Link" data-display-name="AOS: support/products/watch.html"
+                                        class="more" target="_blank">进一步了解 AppleCare+ 全方位服务计划
+                                        <span class="a11y">AppleCare</span></a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                              <div class="column large-12 small-12">
+                                <div class="legal">
+                                  <ol class="as-globalfooter-sosumi-orderedlist">
+                                    <li>维修服务仅适用于材质或工艺存在缺陷的 Apple Watch
+                                    及其原装配件，或容量低于原规格标示的 80%
+                                    的电池。如需了解详情，请参阅 
+                                    <a href="http://www.apple.com/legal/sales-support/applecare/applecareplus"
+                                    data-slot-name="detail6" data-feature-name="Astro Link"
+                                    data-display-name="AOS: www.apple.com/legal/sales-support/applecare/applecareplus"
+                                    target="_blank">www.apple.com/legal/sales-support/applecare/applecareplus</a>
+                                    中的条款。</li>
+                                    <li>适用于 Apple Watch Sport 的 AppleCare+
+                                    全方位服务计划提供多达两次针对使用期间意外损坏的保修服务，每次收取一定的服务费。</li>
+                                  </ol>
+                                  <p>AppleCare+
+                                  全方位服务计划提供你所在辖区消费者权益保护法所赋予法律权利之外的附加权益。享受
+                                  AppleCare+ 全方位服务计划需接受条款和条件。购买 Apple
+                                  Watch，不要求必须购买保修服务。</p>
+                                  <p>在中国负责 AppleCare+
+                                  全方位服务计划服务的公司是上海亚美国际咨询有限公司，该公司在中华人民共和国上海市成立，注册办公地址为上海市浦东新区世纪大道
+                                  1589 号长泰国际金融大厦 3 楼 301A 单元
+                                  (&quot;AICS&quot;)。如需了解详情，请参阅 
+                                  <a href="http://www.apple.com/legal/sales-support/applecare/applecareplus"
+                                  target="new">www.apple.com/legal/sales-support/applecare/applecareplus</a> 中的条款。</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="as-purchaseinfo-button">
+                <button type="submit" class="toolkit-button as-button-large as-button-block as-button-isdisabled" name="proceed"
+                value="proceed" disabled="disabled">
+                  <span>继续</span>
+                </button> 
+                <input type="hidden" name="product" value="MJ2X2CH/A" /> 
+                <input type="hidden" name="step" value="detail" /></div>
+              </div>
+              <div class="as-purchaseinfo-availabilityinfo clearfix">
+                <div class="as-actiontray-retailavailability" id="check-availability-search-section"></div>
+                <div class="as-purchaseinfo-dudeinfo">
+                  <div class="as-purchaseinfo-deliverydates"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="as-product-selection-footer">
+            <div>要求使用安装 iOS 8.2 或更新版本的 iPhone 5、iPhone 5c、iPhone 5s、iPhone SE、iPhone 6、iPhone 6
+            Plus、iPhone 6s 或 iPhone 6s Plus。</div>
+          </div>
+          <div class="as-purchaseinfo-chatonline online">
+            <div>有问题吗？尽管提出。 
+            <button data-chat-avail="cg=DEFAULT;"
+            class="chat chat-ondemand chat-online active as-buttonlink">在线交流</button></div>
+          </div>
+        </div>
+		</div>
+		<div class="col-md-2" >
+		
+		</div>
+		
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4" >
+			 
+			<div class="" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
+		<div class=""> <a class="" href="">隐私政策</a> <a class="" href="">使用条款</a> <a class="" href="">销售政策</a> <a class="" href="">法律信息</a> <a class="" href="">网站地图</a> </div>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

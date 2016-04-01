@@ -133,12 +133,12 @@
 			<img src="images/detail3.jpg"></img>
 		</div>
 	</div>
-	<div class="row foot">
+	<div class="row">
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4" >
 			 
-		<div class="copyRight" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
+			<div class="" >Copyright © 2016 J.W.C Inc. 保留所有权利。</div>
 		<div class=""> <a class="" href="">隐私政策</a> <a class="" href="">使用条款</a> <a class="" href="">销售政策</a> <a class="" href="">法律信息</a> <a class="" href="">网站地图</a> </div>
 		</div>
 		<div class="col-md-4">

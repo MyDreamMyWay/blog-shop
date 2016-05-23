@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title></title>
+    
+
+    <link rel="shortcut icon" href="__PUBLIC__/favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-4">
+            <h2>此网吧下的监控服务器列表</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="index.html">网吧管理</a>
+                </li>
+                <li>
+                    <strong>监控服务器列表</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-sm-8">
+            <div class="title-action">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content">
+        <div class="ibox-content">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>
+                监控服务器ID
+              </th>
+              <th>
+                所属网吧ID
+              </th>
+              <th>
+                服务器名
+              </th>
+              <th>
+                公网IP
+              </th>
+              <th>
+                内网IP
+              </th>
+              <th>
+                网卡地址
+              </th>
+            </tr>
+          </thead>
+          <!--使用volist渲染 -->
+          <tbody>
+            <volist name="result" id="vo">
+              <tr>
+                <td>
+                  {$vo.host_id}
+                </td>
+                <td>
+                  {$vo.host_netbar_id}
+                </td>
+                <td>
+                  {$vo.host_name}
+                </td>
+                <td>
+                  {$vo.host_public_ip}
+                </td>
+                <td>
+                  {$vo.host_private_ip}
+                </td>
+                <td>
+                  {$vo.host_mac}
+                </td>
+                <td>
+                  <a href="serverDelete?id={$vo.host_id}">
+                    删除
+                  </a>
+                  |
+                  <a href="pingView?id={$vo.host_id}">
+                    查看此服务器监控的地址
+                  </a>
+                </td>
+              </tr>
+            </volist>
+          </tbody>
+        </table>
+      </div>
+      <div style="text-align: center;">
+        {$page}
+      </div>
+    </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+
+    
+
+</body>
+
+</html>

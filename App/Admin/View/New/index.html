@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<head>
+  <title>
+    服务器管理
+  </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"
+  />
+  <link rel="stylesheet" href="__PUBLIC__/assets/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__PUBLIC__/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="__PUBLIC__/assets/css/animate.css">
+  <link rel="stylesheet" href="__PUBLIC__/assets/css/main.css">
+  <link rel="stylesheet" href="__PUBLIC__/assets/plugins/jvectormap/css/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="__PUBLIC__/assets/plugins/todo/css/todos.css">
+  <link rel="stylesheet" href="__PUBLIC__/assets/plugins/morris/css/morris.css">
+  <link href="__PUBLIC__/hplus/css/style.css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+  <section id="container">
+    <header id="header">
+      <!--logo start-->
+      <div class="brand">
+        <a href="#" class="logo">
+          服务器管理
+        </a>
+      </div>
+      <!--logo end-->
+      <div class="toggle-navigation toggle-left">
+        <button type="button" class="btn btn-default" id="toggle-left" data-toggle="tooltip"
+        data-placement="right" title="收起列表">
+          <i class="fa fa-bars">
+          </i>
+        </button>
+      </div>
+      <div class="user-nav">
+        <ul>
+          <li class="profile-photo">
+          </li>
+          <li class="dropdown settings">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-user">
+              </i>
+              欢迎管理员[
+              <?php echo session( 'userName')?>
+                ]
+                <i class="fa fa-angle-down">
+                </i>
+            </a>
+          </li>
+          <li>
+            <div class="toggle-navigation toggle-right">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!--sidebar left start-->
+    <aside class="sidebar">
+      <div id="leftside-navigation" class="nano">
+        <ul class="nano-content">
+          <li class="">
+            <a href="panel">
+              <span>
+                主面板
+              </span>
+            </a>
+          </li>
+          <li class="sub-menu">
+            <a id="user" href="javascript:void(0);">
+              <span>
+                日志查询
+              </span>
+            </a>
+            <ul>
+              <li class="">
+                <a href="{:U('new/logView',array())}">
+
+                  日志查询
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a id="tag" href="javascript:void(0);">
+              <span>
+                网吧管理
+              </span>
+            </a>
+            <ul>
+              <li class="">
+                <a href="{:U('new/netbarView',array())}">
+
+                  网吧列表
+                </a>
+              </li>
+              <li class="">
+
+                <a href="{:U('new/netbarAdd',array())}">
+                  添加网吧
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a id="system" href="javascript:void(0);">
+              <span>
+                系统设置
+              </span>
+            </a>
+            <ul>
+              <li>
+                <a href="systemSetting">
+                  基本设置
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            
+            <a href="{:U('new/logout',array())}">
+              <span>
+                退出系统
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+  <section class="main-content-wrapper">
+    <div class="ibox-content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                程序信息
+              </h3>
+              <div class="actions pull-right">
+              </div>
+            </div>
+            <div class="panel-body">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <h5>
+                        服务器环境：
+                        <a>
+                          <?php echo $_SERVER[ 'SERVER_SOFTWARE'] ?>
+                        </a>
+                      </h5>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>
+                        PHP版本：
+                        <a>
+                          <?php echo PHP_VERSION ?>
+                        </a>
+                      </h5>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>
+                        服务器IP：
+                        <!-- <a><?php echo $_SERVER['SERVER_ADDR'] ?></a></h5> -->
+                        <a>
+                          127.0.0.1
+                        </a>
+                      </h5>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>
+                        数据库信息：
+                        <a>
+                          <?php echo mysql_get_client_info() ?>
+                        </a>
+                      </h5>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>
+                        公司官网：
+                        <a href="http://www.91yibai.com" target="_blank">
+                          http://www.91yibai.com
+                        </a>
+                      </h5>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>
+                        作者：
+                        <a>
+                          Jimersy Lee
+                        </a>
+                      </h5>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                最新更新
+              </h3>
+              <div class="actions pull-right">
+              </div>
+            </div>
+            <div class="panel-body">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <h5>
+                        <a href="#">
+                          <p>
+                            2016.4.6
+                          </p>
+                        </a>
+                      </h5>
+                      <span class="user-info">
+                        版本1.0
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div id="footer" class="span12" style="text-align: center;">
+        2015 - 2016 依佰科技 &amp; 版权所有
+      </div>
+    </div>
+  </section>
+  </section>
+  <script src="__PUBLIC__/assets/js/jquery-1.10.2.min.js">
+  </script>
+  <script src="__PUBLIC__/assets/plugins/icheck/js/icheck.min.js">
+  </script>
+  <script src="__PUBLIC__/assets/plugins/bootstrap/js/bootstrap.min.js">
+  </script>
+  <script src="__PUBLIC__/assets/plugins/waypoints/waypoints.min.js">
+  </script>
+  <script src="__PUBLIC__/assets/js/application.js">
+  </script>
+  <script src="__PUBLIC__/assets/plugins/countTo/jquery.countTo.js">
+  </script>
+</body>
+
+</html>

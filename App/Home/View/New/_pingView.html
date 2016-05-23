@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title></title>
+    
+
+    <link rel="shortcut icon" href="__PUBLIC__/favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-4">
+            <h2>查看此监控服务器监控的机器网络状况</h2>
+            <ol class="breadcrumb">
+                <li>
+                    网吧管理
+                </li>
+                <li>
+                    <strong>被监控机器列表</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-sm-8">
+            <div class="title-action">
+                <a href="#" class="btn btn-primary">刷新</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content">
+        <div class="ibox-content">
+      <div class="table-responsive">
+        <table class="table table-striped" id="pingList">
+          <thead>
+            <tr>
+              <th>
+                记录ID
+              </th>
+              <th>
+                网吧ID
+              </th>
+              <th>
+                服务器ID
+              </th>
+              <th>
+                机器名称
+              </th>
+              <th>
+                机器地址
+              </th>
+              <th>
+                更新时间
+              </th>
+              <th>
+                网络延迟
+              </th>
+            </tr>
+          </thead>
+          <!--使用volist渲染 -->
+          <tbody>
+            <volist name="result" id="vo">
+              <tr>
+                <td>
+                  {$vo.ip_id}
+                </td>
+                <td>
+                  {$vo.ip_netbar_id}
+                </td>
+                <td>
+                  {$vo.ip_host_id}
+                </td>
+                <td>
+                  {$vo.ip_name}
+                </td>
+                <td>
+                  {$vo.ip_add}
+                </td>
+                <td>
+                  {$vo.ip_time}
+                </td>
+                <td>
+                  {$vo.ip_timer}ms
+                </td>
+              </tr>
+            </volist>
+          </tbody>
+        </table>
+      </div>
+      <div style="text-align: center;">
+        {$page}
+      </div>
+    </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+	<script>
+
+  
+    function refresh() {
+      $.getJSON("pingViewAjax?id={$host_id}",
+      function(data) {
+        $("#pingList").empty(); //清空表格
+        $("#pingList").append("<thead><tr><th>记录ID</th><th>网吧ID</th><th>服务器ID</th><th>机器名称</th><th>机器地址</th><th>更新时间</th><th>网络延迟</th></tr></thead>");
+
+        $.each(data,
+        function(i, item) {
+          //根据延迟设定,选择图标
+          var lag = parseInt(item.ip_timer);
+          var lowLag = parseInt(item.ip_low);
+          var mediumLag = parseInt(item.ip_medium);
+          var highlag = parseInt(item.ip_high);
+          var imgName = "low.png";
+
+          //判断延迟属于什么范围
+
+          $("#pingList").append("<tr>" + "<td >" + item.ip_id + "</td>" + "<td >" + item.ip_netbar_id + "</td>" + "<td >" + item.ip_host_id + "</td>" + "<td >" + item.ip_name + "</td>" + "<td >" + item.ip_add + "</td>" + "<td >" + item.ip_time + "</td>" + "<td >" + item.ip_timer + "ms<img src='__PUBLIC__/img/low.png'></img></td></tr>");
+        });
+      });
+
+    }
+    var t = setInterval("refresh()", 5000); //隔5秒就查询一次数据
+    
+  </script>
+    
+
+</body>
+
+</html>

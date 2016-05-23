@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>用户管理</title>
+   
+
+    <link rel="shortcut icon" href="__PUBLIC__/favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="__PUBLIC__/css/plugins/jqgrid/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+    <style>
+        /* Additional style to fix warning dialog position */
+
+        #alertmod_table_list_2 {
+            top: 900px !important;
+        }
+    </style>
+
+</head>
+
+<body class="gray-bg">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-4">
+            <h2>网吧用户资料管理</h2>
+            <ol class="breadcrumb">
+                <li>
+                    用户管理
+                </li>
+                <li>
+                    <strong>用户查询</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-sm-8">
+            <div class="title-action">
+                
+            </div>
+        </div>
+    </div>
+	
+	<div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox ">
+                    
+
+                       
+                        <div class="jqGrid_wrapper">
+                            <table id="table_list_2"></table>
+                            <div id="pager_list_2"></div>
+                        </div>
+						<div style="text-align: center;">{$page}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+
+
+
+    <!-- Peity -->
+    <script src="__PUBLIC__/js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="__PUBLIC__/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+    <script src="__PUBLIC__/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function () {
+
+            $.jgrid.defaults.styleUI = 'Bootstrap';
+            //数据渲染到这里
+            var mydata = [
+                {
+                    user_id: "1",
+                    user_user: "222@qq.com",
+                    user_nickname: "test",
+                    user_member_card: "8000",
+                    user_phone: "137111111111",
+                    user_gold: "5841255",
+					user_qq:"36548441",
+					user_mail:"36548441@qq.com",
+					user_last_online_time:"2007-09-01"
+                },
+                {
+                    user_id: "1",
+                    user_user: "222@qq.com",
+                    user_nickname: "test",
+                    user_member_card: "8000",
+                    user_phone: "137111111111",
+                    user_gold: "5841255",
+					user_qq:"36548441",
+					user_mail:"36548441@qq.com",
+					user_last_online_time:"2007-09-01"
+                },
+            ];
+
+            
+
+            // Configuration for jqGrid Example 2
+            $("#table_list_2").jqGrid({
+                data: mydata,
+                datatype: "local",
+                height: 450,
+                autowidth: true,
+                shrinkToFit: true,
+                rowNum: 30,
+				mtype:"POST",
+				editurl:"userEdit",
+				cellurl:'userAdd',
+				
+                rowList: [10, 20, 30],
+                colNames: ['序号', '账号', '昵称', '上机卡号', '手机', '金币', 'QQ','邮箱','最后上机时间'],
+                colModel: [
+                    {
+                        name: 'user_id',
+                        index: 'user_id',
+                        editable: true,
+                        width: 60,
+                        sorttype: "int",
+                        search: true
+                    },
+                    {
+                        name: 'user_user',
+                        index: 'user_user',
+                        editable: false,
+                        width: 90,
+                        
+                        
+                    },
+                    {
+                        name: 'user_nickname',
+                        index: 'user_nickname',
+                        editable: true,
+                        width: 100
+                    },
+                    {
+                        name: 'user_member_card',
+                        index: 'user_member_card',
+                        editable: true,
+                        width: 80,
+                        align: "right",
+                        
+                    },
+                    {
+                        name: 'user_phone',
+                        index: 'user_phone',
+                        editable: true,
+                        width: 80,
+                        
+                    },
+                    {
+                        name: 'user_gold',
+                        index: 'user_gold',
+                        editable: true,
+                        width: 80,
+                        
+                    },
+                    {
+                        name: 'user_qq',
+                        index: 'user_qq',
+                        editable: true,
+                        width: 100,
+                        sortable: false
+                    },
+					{
+                        name: 'user_mail',
+                        index: 'user_mail',
+                        editable: true,
+                        width: 100,
+                        sortable: false
+                    },
+					{
+                        name: 'user_last_online_time',
+                        index: 'user_last_online_time',
+                        editable: true,
+                        width: 100,
+                        sortable: false
+                    }
+                ],
+                pager: "#pager_list_2",
+                viewrecords: true,
+                caption: "网吧用户表",
+                add: true,
+                edit: true,
+                addtext: 'Add',
+                edittext: 'Edit',
+                hidegrid: false
+            });
+
+            // Add selection
+            $("#table_list_2").setSelection(4, true);
+
+
+            // Setup buttons
+            $("#table_list_2").jqGrid('navGrid', '#pager_list_2', {
+                edit: true,
+                add: true,
+                del: true,
+                search: true
+            }, {
+                height: 500,
+                reloadAfterSubmit: true
+            });
+
+            // Add responsive to jqGrid
+            $(window).bind('resize', function () {
+                var width = $('.jqGrid_wrapper').width();
+                $('#table_list_1').setGridWidth(width);
+                $('#table_list_2').setGridWidth(width);
+            });
+        });
+    </script>
+
+   
+
+</body>
+
+</html>

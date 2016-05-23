@@ -1,0 +1,573 @@
+<?php
+namespace Home\Controller;
+use Think\Controller;
+
+
+class IndexController extends Controller {
+    public function index(){//11:57 AM 3/21/2016 一个总览 显示以下数据 1 服务器压力2实时的api请求数 3总安装数 
+		//检查是否登录
+		if(checkClass()<>1){
+			
+			$this->error('未登录,请先登录!','login',1);
+		}
+        $this->display("_index");
+    } 
+	
+	
+	public function index_v3(){
+		$this->display();
+	}
+		
+		
+	public function accountSetting(){
+		//检查是否登录
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		
+		$this->display('_accountSetting');
+		
+	}
+	public function systemSetting(){//5:12 PM 3/23/2016 系统设置 更改账号等
+		//检查是否登录
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		
+		$this->display('_systemSetting');
+		
+		
+	}
+	public function loginOut(){//5:13 PM 3/23/2016 登出 
+		//检查是否登录
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		
+		
+		session('[destroy]'); // 销毁session
+		
+		$this->success('退出成功!','login');
+	}
+	public function login(){//登录
+	
+		//获取账号密码验证码
+		$user_user=$_POST['user_user'];
+		$user_psw=$_POST['user_psw'];  //todo:明码 之后再前端改为生成md5
+		$checkCode=$_POST['checkCode'];
+		
+		if($user_user==''){  //非post 只是打开登录页
+			//显示登录页
+			$this->display('login'); 
+		}else{ //post请求
+			
+			if(!checkVerify($checkCode)){
+				$this->error("验证码错误!",'login');
+			}else{
+					//查询数据库
+				$user=M('user');  //todo:错误类型 1 密码错误 2账号不存在
+				//查找 select * from live_user where user_user='name' and user_psw='psw' limit 1
+				$md5Psw=md5($user_psw);
+				/* $user_class=$user->where("user_user='".$user_user."' and user_psw='".$md5Psw."'")->getField('user_class');
+				$user_nickname=$user->where("user_user='".$user_user."' and user_psw='".$md5Psw."'")->getField('user_nickname'); */
+				
+				$result=$user->where("user_user='".$user_user."' and user_pwd='".$md5Psw."'")->find();
+				$user_class=$result['user_class'];
+				$user_nickname=$result['user_nickname'];
+				$user_id=$result['user_id'];
+				
+				if($user_class==1 or $user_class==2 or $user_class==3){
+				//验证通过
+				//设置seesion,name ,class
+				
+				
+				session('userName',$user_name);
+				session('userClass',$user_class);
+				session('userID',$user_id);
+				
+				
+				
+				
+				
+				
+				$this->success('登录成功!','index',1);
+				//返回主页
+				
+				
+				}else{//验证不通过
+				$this->error('账号或密码错误!','login');
+				
+				
+			}
+			}
+		
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	public function changePsw(){  //ok 修改密码 16:06 2016/2/19   18:00 2016/2/19 添加验证码
+		if(isset($_POST['newPsw'])){
+			//post
+			//核对验证码
+			
+					//判断长度
+			$psw=$_POST['newPsw'];
+			if(strlen($psw)>20 or strlen($psw)==0){
+				//超过长度
+				$this->error('新密码长度不符合规定');
+			}else{
+				//合法
+				$user=M('user');
+				$md5Psw=md5($psw);
+				
+				$result=$user->where("user_name='".$Think.session('userName')."'")->setField('user_psw',$md5Psw);
+				if($result){
+					
+					$this->success('更改密码成功~');
+					
+				}else{
+					$this->error('更改密码失败~');
+				}
+				
+			
+			
+			
+			}
+		}else{
+			//get
+			$this->display('systemSetting');
+		}
+		
+	}
+	public function verify_img(){  //生成验证码 ok
+	
+		ob_clean();
+        $verify = new \Think\Verify();
+        $verify->codeSet = '0123456789';
+        $verify->fontSize = '14px';
+        $verify->imageW = 95;
+        $verify->imageH = 30;
+        $verify->length = 4;
+        $verify->useCurve = false;
+        $verify->useNoise = false;
+        $verify->entry();
+		
+		
+		
+	}
+		
+		
+		
+
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public function reg(){//打开注册账号页面  ok 16:47 2016/2/16
+	$this->display('reg');
+	
+	}
+	public function doReg(){//post提交注册  ok  16:47 2016/2/16
+		$data['user_user']=$_POST['user_user'];
+		//$data['user_psw']=$_POST['user_psw'];  //两次密码是否相同由前端处理
+		$data['user_pwd']=md5($_POST['user_psw']);//md5处理
+		$data['user_email']=$_POST['user_email'];
+		$data['user_reg_time']=date("Y-m-d H:i:s",time());
+		$data['user_class']=1; //注册会员
+		$data['user_phone']=$_POST['user_phone'];
+		$data['user_name']=$_POST['user_name'];
+		
+		
+		$checkCode=$_POST['checkCode'];
+		if(!checkVerify($checkCode)){
+				$this->error("验证码错误!");
+			}else{
+				$user=M('user');
+				$result=$user->data($data)->add();
+				if($result){
+					
+					//设置session
+					session('userName',$data['user_user']);
+					session('userClass',1);//1为注册用户 2为最高管理员
+					session('userID',$result);//将userID保存到session 此id很重要,显示日志,网吧都跟此ID有关
+				$this->success('注册成功!','../index/index',1);
+				
+				
+				}else{
+				$this->error('注册失败!');
+				}
+			}
+		
+		
+		
+		
+		
+	}
+	public function checkName($userName=''){//检查用户名是否已经被使用 在reg页面通过ajax请求此函数   ok 16:18 2016/2/16
+	
+		if($userName==''){
+			$this->show('null');
+			
+		}else{
+			$user=M('user');
+			$result=$user->where("user_name='".$userName."'")->select();
+			if($result){
+				$this->show('exist');
+			}else{
+				$this->show('ok');
+			}
+		}
+		
+	}
+	public function checkEmail($userEmail=''){//检查用户名是否已经被使用 在reg页面通过ajax请求此函数   ok 16:18 2016/2/16
+	
+		if($userName==''){
+			$this->show('null');
+			
+		}else{
+			$user=M('user');
+			$result=$user->where("user_email='".$userEmail."'")->select();
+			if($result){
+				$this->show('exist');
+			}else{
+				$this->show('ok');
+			}
+		}
+		
+	}
+	
+	public function userView(){
+		//查询此用户id下的所有网吧用户
+		$netbar_user=M('netbar_user');
+		// 取出管理员id
+		$admin_id=session('userID');
+		
+		$result=$netbar_user->where('user_admin_id='.$admin_id)->select();
+		
+		if($result){
+			 $this->assign('result',$result);
+		}else{
+			$this->assign('noResult','此管理员下没有用户');
+			
+		}
+		
+		
+	
+		
+		
+		
+		
+		$this->display('_userView2'); 
+		
+	}
+	public function userEdit($id){
+		$data['user_id']=$_POST['user_id'];
+		if($data['user_id']<>''){//post请求
+			
+			$data['user_nickname']=$_POST['user_nickname'];
+			$data['user_member_card']=$_POST['user_member_card'];
+			$data['user_phone']=$_POST['user_phone'];
+			$data['user_gold']=$_POST['user_gold'];
+			$data['user_qq']=$_POST['user_qq'];
+			$data['user_mail']=$_POST['user_mail'];
+		
+		
+			$netbar_user=M('netbar_user');
+			$result=$netbar_user->save($data);
+			if($result){
+				$this->success('更新成功~');
+				
+			}else{
+				$this->error('更新失败~');
+				
+			}
+			
+		
+			
+		}else{//get请求
+			$netbar_user=M('netbar_user');
+			$result=$netbar_user->where('user_id='.$id)->select();
+			
+			$this->assign('result',$result);
+			
+			$this->display('_userEdit');
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+	public function userDelete($id){
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		$netbar_user=M('netbar_user');
+		$result=$netbar_user->where('user_id='.$id)->delete();
+		if($result){
+			$this->success('删除成功~');
+		}else{
+			$this->error('删除失败~');
+			
+		}
+		
+		
+	}
+	public function serverView($id){ // 浏览网吧id为$id的下的服务器 5:04 PM 4/7/2016 ok
+		//查看服务器情况页面,之后调用 viewServerAjax更新数据
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		
+		
+		//查询属于此用户的网吧
+		$host=M('host');
+		$result=$host->where("host_netbar_id=".$id)->select();
+		if($result){
+			//存在记录,渲染网吧的服务器列表
+			$this->assign('result',$result);
+			
+			
+			
+		}else{
+			//没有记录
+			$this->assign('noResult',"没有属于您的网吧的服务器~");
+			
+		}
+		$this->display('_serverView');
+	}
+	public function pingView($id){//查看服务器记录的ping值的第一次打开页面,功能:1显示该服务器下的监控的ping值 2生成特定的ajax连接,以便更新
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		$ip=M('ip');
+		$result=$ip->where("ip_host_id=".$id)->select();
+		if($result){
+			$this->assign('result',$result);
+		}else{
+			$this->assign('noResult','没有找到此服务器上传的记录~');
+			
+		}
+		
+		//渲染ajax开始
+		$this->assign("host_id",$id);
+		
+		//渲染ajax结束
+		
+		
+		
+		
+		$this->display('_pingView');
+		
+		
+	}
+	public function pingViewAjax($id){  //查看服务器记录的ping值的ajax接口 
+		//查看服务器信息,ajax调用接口
+		if(checkClass()<>1){
+			$this->show("[]");
+		}
+		
+		
+		
+		$ip=M('ip');
+		$result=$ip->where("ip_host_id=".$id)->select();
+		
+		
+		
+		$str_json=json_encode($result,JSON_UNESCAPED_UNICODE);
+		
+		
+		$this->show($str_json);
+		
+		
+	}
+	
+	public function netbarView(){   //显示某用户名下的网吧列表 4:25 PM 4/7/2016 ok
+		//显示已登录用户所拥有的网吧
+		//取用户名
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		$user_id=session('userID');
+		
+		//查询属于此用户的网吧
+		$netbar=M('netbar');
+		$result=$netbar->where("netbar_user_id=".$user_id)->select();
+		
+		if($result){
+			//存在记录,渲染网吧列表
+			$this->assign('result',$result);
+			
+			
+			
+		}else{
+			//没有记录
+			$this->assign('noResult',"没有属于您的网吧~");
+			
+		}
+		
+		$this->display('_netbarView');
+		
+	}
+	public function netbarDelete($id){ //删除网吧  4:24 PM 4/7/2016  ok
+		//检查是否登录
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		$userID=session('userID');
+		
+		$wl=M('netbar');
+		$result=$wl->where('netbar_id='.$id." and netbar_user_id=".$userID)->delete();
+		if($result){
+			$this->success('删除成功~');
+		}else{
+			$this->error('删除失败~');
+		}
+			
+	}
+	public function netbarAdd(){ //增加网吧已登录用户的名下  5:04 PM 4/7/2016 ok
+		//检查是否登录
+		if(checkClass()<>1){
+			$this->error('未登录,请先登录!','login',1);
+		}
+		
+		
+		if($_POST['netbar_key']<>""){
+			$data['netbar_key']=$_POST['netbar_key'];
+			$data['netbar_name']=$_POST['netbar_name'];
+			$data['netbar_contacts']=$_POST['netbar_contacts'];
+			$data['netbar_phone']=$_POST['netbar_phone'];
+			$data['netbar_mail']=$_POST['netbar_mail'];
+			$data['netbar_user_id']=session('userID');
+			
+			
+			$wl=M('netbar');
+			$result=$wl->add($data);
+			
+			if($result){
+				$this->success('添加网吧成功~');
+			}else{
+				$this->error('添加到数据库失败~');
+				
+			}
+		}else{
+			$this->display('_netbarAdd');
+			
+		}
+		
+		
+	}
+	
+	public function logView($p=1){//按页数查看
+			$log=M('log');
+			$userID=session('userID');
+			
+			$result=$log->where('log_user_id='.$userID)->page($p.',10')->order('log_time desc')->select(); //page  todo 分页处理 第p页 取5条记录
+			if($result){
+			$this->assign('result',$result);
+			
+			$count=$log->where('log_user_id='.$userID)->count();
+			$page=new \Think\Page($count,10); //每页显示10条
+			$show=$page->show();
+			$this->assign('page',$show);
+		
+			
+			}
+			$this->display('_logView');
+	}
+	public function logViewDate($p=1){
+		$startDate=$_POST['startDate'];
+		$stopDate=$_POST['stopDate'];
+		
+		
+		//session保存开始时间,下次分页查询的时候直接使用
+		if($startDate<>'' and $stopDate<>''){
+			
+			
+			//如果没有设置session,则设置session,否则直接取值
+			if(session('startDate')<>'' and $p<>1){//已经设置过日期
+				$startDate=session('startDate');
+				$stopDate=session('stopDate');
+				
+			}else{
+				session('startDate',$startDate);
+				session('stopDate',$stopDate);
+			}
+			
+			
+			$log=M('log');
+			$userID=session('userID');
+			
+			$result=$log->where('log_time>="'.$startDate.'" and log_time<="'.$stopDate.'" and log_user_id='.$userID)->page($p.',10')->order('log_time desc')->select(); //page  todo 分页处理 第p页 取5条记录
+			if($result){
+			
+			$this->assign('result',$result);
+			$count=$log->where('log_time>="'.$startDate.'" and log_time<="'.$stopDate.'" and log_user_id='.$userID)->count();
+			$page=new \Think\Page($count,10); //每页显示10条
+			$show=$page->show();
+			$this->assign('page',$show);
+			
+		}
+		}else{//如果没有日期参数,清空session的开始与结束日期
+			if($p<>''){ //有页码
+				$startDate=session('startDate');
+				$stopDate=session('stopDate');
+				$log=M('log');
+				$userID=session('userID');
+			
+				$result=$log->where('log_time>="'.$startDate.'" and log_time<="'.$stopDate.'" and log_user_id='.$userID)->page($p.',10')->order('log_time desc')->select(); //page  todo 分页处理 第p页 取5条记录
+				if($result){
+			
+				$this->assign('result',$result);
+				$count=$log->where('log_time>="'.$startDate.'" and log_time<="'.$stopDate.'" and log_user_id='.$userID)->count();
+				$page=new \Think\Page($count,10); //每页显示10条
+				$show=$page->show();
+				$this->assign('page',$show);
+				}else{//无页码
+				session('startDate','');
+				session('stopDate','');
+				}
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+	}
+	$this->display('_logView');
+	}
+	
+	
+	
+	
+	
+}
+	
+	

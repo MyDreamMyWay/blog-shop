@@ -1,0 +1,1 @@
+a:3:{i:0;s:11:"config_work";i:1;s:17:"config_deleteSelf";s:5:"_type";a:2:{s:11:"config_work";s:7:"int(11)";s:17:"config_deleteSelf";s:7:"int(11)";}}
